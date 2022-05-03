@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 export default function ItemsList({ fetchInitialData, data }) {
   let [searchParams] = useSearchParams();
-  const [items, setItems] = React.useState(() => {
+  const [response, setResponse] = React.useState(() => {
     return __isBrowser__ ? window.__INITIAL_DATA__ : data;
   });
 
-  const [loading, setLoading] = React.useState(items ? false : true);
+  const [loading, setLoading] = React.useState(response ? false : true);
 
-  const fetchNewsItems = React.useRef(items ? false : true);
+  const fetchNewsItems = React.useRef(response ? false : true);
 
   const id = searchParams.get("search");
 
@@ -18,8 +18,8 @@ export default function ItemsList({ fetchInitialData, data }) {
     if (fetchNewsItems.current === true) {
       setLoading(true);
 
-      fetchInitialData(id).then((items) => {
-        setItems(items);
+      fetchInitialData(id).then((response) => {
+        setResponse(response);
         setLoading(false);
       });
     } else {
@@ -32,7 +32,7 @@ export default function ItemsList({ fetchInitialData, data }) {
   }
   return (
     <div className="items-list">
-      {items.map((item) => (
+      {response.items.map((item) => (
         <div key={`item-${item.id}`}>
           <NavLink
             activeStyle={{ fontWeight: "bold" }}
@@ -41,15 +41,15 @@ export default function ItemsList({ fetchInitialData, data }) {
           >
             <div className="item-list__image">
               <img
-                src={item.thumbnail}
+                src={item.picture}
                 className=""
-                alt={item.description}
+                alt={item.title}
                 width="180"
                 height="180"
               />
             </div>
             <div className="item-list__details">
-              <p>{item.price}</p>
+              <p>{item.price.amount}</p>
               <p>{item.title}</p>
             </div>
           </NavLink>
