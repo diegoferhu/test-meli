@@ -52,7 +52,7 @@ export function fetchItemDetails(id) {
           decimals: 0,
         },
         picture: responseMeliApi[0].pictures[0].secure_url,
-        condition: responseMeliApi[0].condition,
+        condition: responseMeliApi[0].condition === "new" ? "Nuevo" : "Usado",
         free_shipping: responseMeliApi[0].shipping.free_shipping,
         sold_quantity: responseMeliApi[0].sold_quantity,
         description: responseMeliApi[1].plain_text,

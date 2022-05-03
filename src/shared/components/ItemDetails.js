@@ -35,9 +35,14 @@ export default function ItemDetails({ fetchInitialData, data }) {
           <img src={details.item.picture} alt={details.item.title} />
         </div>
         <div className="item__info">
-          <h1>{details.item.title}</h1>
-          <p>{details.item.price.amount}</p>
-          <p>{details.item.condition}</p>
+          <div className="body">
+            <p>
+              {details.item.condition} - {details.item.sold_quantity} vendidos
+            </p>
+            <h1>{details.item.title}</h1>
+            <p className="price">{details.item.price.amount}</p>
+            <button>Comprar</button>
+          </div>
         </div>
       </div>
       <div className="item__description">
