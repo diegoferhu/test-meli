@@ -1,6 +1,7 @@
 import Home from "./components/Home";
 import ItemsList from "./components/ItemsList";
-import { fetchItems } from "./api";
+import ItemDetails from "./components/ItemDetails";
+import { fetchItems, fetchItemDetails } from "./api";
 
 const routes = [
   {
@@ -11,8 +12,14 @@ const routes = [
     path: "/items",
     component: ItemsList,
     fetchInitialData: (path = "") => {
-      console.log("fetching items", path);
       return fetchItems(path.split("=").pop());
+    },
+  },
+  {
+    path: "/items/:id",
+    component: ItemDetails,
+    fetchInitialData: (path = "") => {
+      return fetchItemDetails(path.split("/").pop());
     },
   },
 ];

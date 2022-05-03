@@ -3,19 +3,19 @@ import { useSearchParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 export default function ItemsList({ fetchInitialData, data }) {
-  let [searchParams, setSearchParams] = useSearchParams();
+  let [searchParams] = useSearchParams();
   const [items, setItems] = React.useState(() => {
     return __isBrowser__ ? window.__INITIAL_DATA__ : data;
   });
 
   const [loading, setLoading] = React.useState(items ? false : true);
 
-  const fetchNewRepos = React.useRef(items ? false : true);
+  const fetchNewsItems = React.useRef(items ? false : true);
 
   const id = searchParams.get("search");
 
   React.useEffect(() => {
-    if (fetchNewRepos.current === true) {
+    if (fetchNewsItems.current === true) {
       setLoading(true);
 
       fetchInitialData(id).then((items) => {
@@ -23,14 +23,13 @@ export default function ItemsList({ fetchInitialData, data }) {
         setLoading(false);
       });
     } else {
-      fetchNewRepos.current = true;
+      fetchNewsItems.current = true;
     }
-  }, [id, fetchNewRepos]);
+  }, [id, fetchNewsItems]);
 
   if (loading === true) {
     return <i className="loading">?????</i>;
   }
-  console.log("items", items);
   return (
     <div className="items-list">
       {items.map((item) => (
