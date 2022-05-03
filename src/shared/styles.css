@@ -1,7 +1,8 @@
 
 :root {
   --black: #122;
-  --white: #dee;
+  --white: #cecece;
+  --yellow: #ffe600;
 }
 
 *,
@@ -29,7 +30,25 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1100px;
-  padding: 50px;
+  width: 100%;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: var(--yellow);
+}
+
+.header__log{
+  margin-right: 10px;
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

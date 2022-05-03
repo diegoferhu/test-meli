@@ -21,7 +21,6 @@ const Search = () => {
           placeholder="search"
           onKeyDown={handlerSearch}
         />
-        Item to search: {search}
       </form>
     </div>
   );

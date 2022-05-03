@@ -4,7 +4,7 @@ import Search from "./Search";
 const Header = () => {
   return (
     <div className="header">
-      <div> logo here</div>
+      <div className="header__log"> logo here</div>
       <Search />
     </div>
   );
