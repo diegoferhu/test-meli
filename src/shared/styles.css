@@ -52,3 +52,19 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
+.item-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  margin-bottom: 4px;
+}
+
+.item-list__image {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 10px;
+}
