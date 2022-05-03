@@ -36,7 +36,8 @@ app.get("*", (req, res, next) => {
           <title>SSR with React Router</title>
           <script src="/bundle.js" defer></script>
           <link href="/main.css" rel="stylesheet">
-          <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
         </head>
 
         <body>

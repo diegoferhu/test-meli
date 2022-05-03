@@ -24,24 +24,29 @@ export default function ItemDetails({ fetchInitialData, data }) {
       fetchNewDetails.current = true;
     }
   }, [id, fetchNewDetails]);
-  console.log("details", details);
+
   if (loading === true) {
-    return <i className="loading">🤹‍♂️</i>;
+    return <i className="loading">??????‍r</i>;
   }
   return (
     <div className="item">
       <div className="item__main">
         <div className="item__image">
-          <img src={details.pictures[0].secure_url} alt={details.title} />
+          <img src={details.item.picture} alt={details.item.title} />
         </div>
         <div className="item__info">
-          <h1>{details.title}</h1>
-          <p>{details.price}</p>
-          <p>{details.warranty}</p>
+          <div className="body">
+            <p>
+              {details.item.condition} - {details.item.sold_quantity} vendidos
+            </p>
+            <h1>{details.item.title}</h1>
+            <p className="price">{details.item.price.amount}</p>
+            <button>Comprar</button>
+          </div>
         </div>
       </div>
       <div className="item__description">
-        <p>details.description</p>
+        <p>{details.item.description}</p>
       </div>
     </div>
   );
