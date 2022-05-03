@@ -112,3 +112,11 @@ body {
   height: 180px;
   margin-bottom: 10px;
 }
+
+.item-list__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
