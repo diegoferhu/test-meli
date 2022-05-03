@@ -1,0 +1,21 @@
+{
+  "name": "test-meli",
+  "version": "1.0.0",
+  "description": "Test meli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@personal:diegoferhu/test-meli.git"
+  },
+  "keywords": [
+    "meli",
+    "react",
+    "ssr",
+    "express"
+  ],
+  "author": "Diego Hurtado",
+  "license": "ISC"
+}
