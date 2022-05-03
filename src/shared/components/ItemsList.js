@@ -34,11 +34,7 @@ export default function ItemsList({ fetchInitialData, data }) {
     <div className="items-list">
       {response.items.map((item) => (
         <div key={`item-${item.id}`}>
-          <NavLink
-            activeStyle={{ fontWeight: "bold" }}
-            to={`/items/${item.id}`}
-            className="item-list"
-          >
+          <NavLink to={`/items/${item.id}`} className="item-list">
             <div className="item-list__image">
               <img
                 src={item.picture}

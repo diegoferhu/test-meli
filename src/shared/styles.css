@@ -42,8 +42,13 @@ body {
   background: var(--yellow);
 }
 
-.header__log{
-  margin-right: 10px;
+.header__logo{
+  background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.18.9/mercadolibre/logo__large_plus@2x.png);
+  -webkit-background-size: 134px 34px;
+  background-size: 134px 34px; margin-right: 10px;
+  height: 34px;
+  top: 11px;
+  width: 134px;
 }
 
 .layout {
