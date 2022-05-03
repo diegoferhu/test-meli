@@ -45,8 +45,13 @@ export default function ItemsList({ fetchInitialData, data }) {
               />
             </div>
             <div className="item-list__details">
-              <p>{item.price.amount}</p>
-              <p>{item.title}</p>
+              <div className="header">
+                <p className="price">{item.price.amount}</p>
+                <p>item.category</p>
+              </div>
+              <div className="body">
+                <p>{item.title}</p>
+              </div>
             </div>
           </NavLink>
         </div>
