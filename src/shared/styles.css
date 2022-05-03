@@ -1,0 +1,35 @@
+
+:root {
+  --black: #122;
+  --white: #dee;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--white);
+  color: var(--black);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 50px;
+}
+
