@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function ItemDetails({ fetchInitialData, data }) {
   const [details, setDetails] = React.useState(() => {
@@ -26,7 +27,7 @@ export default function ItemDetails({ fetchInitialData, data }) {
   }, [id, fetchNewDetails]);
 
   if (loading === true) {
-    return <i className="loading">??????‍r</i>;
+    return <Loader />;
   }
   return (
     <div className="item">

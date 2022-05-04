@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useSearchParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function ItemsList({ fetchInitialData, data }) {
   let [searchParams] = useSearchParams();
@@ -28,7 +29,7 @@ export default function ItemsList({ fetchInitialData, data }) {
   }, [id, fetchNewsItems]);
 
   if (loading === true) {
-    return <i className="loading">?????</i>;
+    return <Loader />;
   }
   return (
     <div className="items-list">
