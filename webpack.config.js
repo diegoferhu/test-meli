@@ -47,4 +47,3 @@ const serverConfig = {
 };
 
 module.exports = [browserConfig, serverConfig];
-

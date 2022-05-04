@@ -27,10 +27,14 @@ export function fetchItems(item) {
           condition: item.condition,
           free_shipping: item.shipping.free_shipping,
         })),
-        category: items.filters[0].values[0].name,
-        bredcrumb: items.filters[0].values[0].path_from_root
-          .map((category) => category["name"])
-          .join(" > "),
+        category:
+          items.filters.length > 0 ? items.filters[0].values[0].name : "",
+        bredcrumb:
+          items.filters.length > 0
+            ? items.filters[0].values[0].path_from_root
+                .map((category) => category["name"])
+                .join(" > ")
+            : "",
       };
       return response;
     })
