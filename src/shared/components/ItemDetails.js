@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
 import Loader from "./Loader";
+import CurrencyFormat from "react-currency-format";
 
 export default function ItemDetails({ fetchInitialData, data }) {
   const [details, setDetails] = React.useState(() => {
@@ -41,7 +42,13 @@ export default function ItemDetails({ fetchInitialData, data }) {
               {details.item.condition} - {details.item.sold_quantity} vendidos
             </p>
             <h1>{details.item.title}</h1>
-            <p className="price">{details.item.price.amount}</p>
+            <CurrencyFormat
+              className="price"
+              value={details.item.price.amount}
+              displayType={"text"}
+              thousandSeparator={true}
+              prefix={"$"}
+            />
             <button>Comprar</button>
           </div>
         </div>
