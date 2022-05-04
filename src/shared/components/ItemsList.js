@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useSearchParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function ItemsList({ fetchInitialData, data }) {
   let [searchParams] = useSearchParams();
@@ -28,10 +29,11 @@ export default function ItemsList({ fetchInitialData, data }) {
   }, [id, fetchNewsItems]);
 
   if (loading === true) {
-    return <i className="loading">?????</i>;
+    return <Loader />;
   }
   return (
     <div className="items-list">
+      <p>{response.bredcrumb}</p>
       {response.items.map((item) => (
         <div key={`item-${item.id}`}>
           <NavLink to={`/items/${item.id}`} className="item-list">
@@ -47,7 +49,7 @@ export default function ItemsList({ fetchInitialData, data }) {
             <div className="item-list__details">
               <div className="header">
                 <p className="price">{item.price.amount}</p>
-                <p>item.category</p>
+                <p>{response.category}</p>
               </div>
               <div className="body">
                 <p>{item.title}</p>

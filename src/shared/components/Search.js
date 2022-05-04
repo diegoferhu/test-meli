@@ -5,18 +5,28 @@ const Search = () => {
   const [search, setSearch] = useState("Hello");
   const navigate = useNavigate();
 
+  const navigateTo = (search) => {
+    const idItemRegex = /^MLA/gm;
+
+    if (search.match(idItemRegex)) {
+      navigate(`/items/${search}`);
+      return;
+    }
+    navigate(`/items?search=${search}`);
+  };
+
   const handlerSearch = (e) => {
     setSearch(e.target.value);
 
     if (e.key === "Enter") {
       e.preventDefault();
-      navigate(`/items?search=${e.target.value}`);
+      navigateTo(e.target.value);
     }
   };
 
   const handlerClickSearch = (e) => {
     e.preventDefault();
-    navigate(`/items?search=${search}`);
+    navigateTo(search);
   };
 
   return (
