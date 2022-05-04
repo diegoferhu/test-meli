@@ -153,12 +153,13 @@ a {
   padding: 10px;
   background: var(--white);
   margin-bottom: 4px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .item__info{
  display: flex;
  justify-content: flex-end;
- width: 100%;
  padding: 10px;
  background: var(--white);
  margin-bottom: 4px;
